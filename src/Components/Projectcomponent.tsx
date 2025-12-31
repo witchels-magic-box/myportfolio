@@ -45,7 +45,7 @@ function Projectcomponent({
 
   return (
     <div className="flex flex-col md:flex-row mb-10">
-      <div className="w-[15rem] m-auto mb-10 md:w-[30rem] md:ml-10">
+      <div className="mb-10 ml-10">
         {renderMedia()}
       </div>
 

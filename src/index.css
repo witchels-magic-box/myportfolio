@@ -17,6 +17,9 @@ body {
   overflow-x: hidden;
   
 }
+img, video {
+  max-width: none;
+}
 .inline {
   display: inline;
 }
@@ -111,7 +114,7 @@ li::before {
   font-size:30px;
 }
 .media{
-  width: 20rem;
+  width: 250px;
   height:180px;
 }
 
