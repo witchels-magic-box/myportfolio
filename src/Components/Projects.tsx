@@ -1,12 +1,26 @@
 import '../index.css'
 import projectdata from '../data/projectdata.ts'
-import Projectcomponents from './Projectcomponent.tsx'
+import Projectcomponent from './Projectcomponent.tsx';
+
+
+export type MediaWindow =
+  | { type: "image"; src: string }
+  | { type: "video"; src: string }
+  | { type: "text"; src: string };
+
+export interface ProjectComponentProps {
+  projectTitle: string;
+  description: string[];
+  codebase?: string;
+  livelink?: string;
+  window?: MediaWindow;
+}
 
 function Projects() {
 
-  function returnprops(project){
+  function returnprops(project: ProjectComponentProps){
     return (
-      <Projectcomponents key={project.projectTitle}
+      <Projectcomponent key={project.projectTitle}
       projectTitle={project.projectTitle}
       description={project.description}
       codebase={project.codebase}

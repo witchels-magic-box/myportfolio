@@ -1,25 +1,30 @@
+import "../index.css";
 
-import '../index.css'
-import { useState } from 'react';
+interface ExperienceProps {
+  jobtitle: string;
+  date: string;
+  experiencedetails: string[];
+}
 
-function Componentexperience({props}) {
-
-
-
-
-  
-
+function Componentexperience({
+  jobtitle,
+  date,
+  experiencedetails,
+}: ExperienceProps) {
   return (
     <div className="mb-[5rem] expitem">
-      <h2 className="jobtitle">{props.jobtitle}</h2>
-      <p className="datestyle">{props.date}</p>
+      <h2 className="jobtitle">{jobtitle}</h2>
+      <p className="datestyle">{date}</p>
+
       <ul>
-        {props.experiencedetails.map((list) => (<li className="w-50 mb-2" key={list}>{list}</li>))}
-        </ul>
-      
-        
+        {experiencedetails.map((item, index) => (
+          <li className="w-50 mb-2" key={index}>
+            {item}
+          </li>
+        ))}
+      </ul>
     </div>
-  )
+  );
 }
 
 export default Componentexperience;

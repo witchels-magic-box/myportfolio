@@ -4,6 +4,7 @@ import agsky from "../assets/agsky.png"
 import xss from "../assets/sxx.png"
 import witchels from "../assets/witchels.png"
 import grub from "../assets/ricepest.mp4"
+import type { ProjectComponentProps } from "../Components/Projects.tsx";
 
 type Media =
   | { type: "image"; src: string }
@@ -18,7 +19,7 @@ export type projectData = {
   window?: Media;     // optional (only if you really need it)
 };
 
-const projectData = [
+const projectData: ProjectComponentProps[] = [
 
     {
     projectTitle:

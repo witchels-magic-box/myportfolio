@@ -1,4 +1,4 @@
-import { stringify } from 'postcss';
+
 import '../index.css'
 import Componentexperience from './Componentexperience'
 import { useState } from 'react';
@@ -6,14 +6,22 @@ import { useState } from 'react';
 
 function Experience() {
 
-   const [selected, setSelected] = useState(false);
+  const [btn, setBtn] = useState<number>(0);
+
+interface ExperienceData {
+  jobtitle: string;
+  date: string;
+  experiencedetails: string[];
+}
+
+   
 
    const [selectStates, setSelectStates] = useState([true, false, false]);
 
 
 
 
-  const desc: Record<number, object> = {
+  const desc: Record<number, ExperienceData> = {
     0: {jobtitle: "Graduate Research Assistant",
       date: "January 2025 - Present",
       experiencedetails: [ "Leading full-stack development and UI design for a UAV-based precision-agriculture platform entitled Agskysight. Built core frontend modules and analysis dashboards using React (TypeScript) and CSS, enabling interactive exploration of UAV imagery and plot-level traits. ",
@@ -44,27 +52,24 @@ function Experience() {
     }
   }
 
-  const [btn, setBtn] = useState<Number>(0)
+ 
 
-  function setbutton(p){
-    setBtn(p)
-    if (p==0)
-    setSelectStates([true,false,false])
-  else if (p==1)
-    setSelectStates([false,true,false])
-  else
-    setSelectStates([false,false,true])
-    
+  function setbutton(p: number) {
+  setBtn(p);
+
+  if (p === 0) {
+    setSelectStates([true, false, false]);
+  } else if (p === 1) {
+    setSelectStates([false, true, false]);
+  } else {
+    setSelectStates([false, false, true]);
   }
-  function setselection(p){
-    
-    if (selectStates[p]==true)
-     {
-      
-      return ("experiencebtnm")}
-    else
-      return("experiencebtn")
-  }
+}
+
+function setselection(p: number): string {
+  return selectStates[p] ? "experiencebtnm" : "experiencebtn";
+}
+
 
 
 
@@ -81,7 +86,7 @@ function Experience() {
 
       <div className="sm: ml-[10px] md:ml-[100px]"> 
         <p>
-          <Componentexperience props={desc[btn]} />
+          <Componentexperience {...desc[btn]} />
         </p>
       </div>
       
