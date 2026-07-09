@@ -1,6 +1,6 @@
 
 import nexus from "../assets/nexus.mp4"
-import agsky from "../assets/agsky.png"
+import agsky from "../assets/agssv.mp4"
 import xss from "../assets/sxx.png"
 import witchels from "../assets/witchels.png"
 import grub from "../assets/ricepest.mp4"
@@ -44,7 +44,7 @@ const projectData: ProjectComponentProps[] = [
    
 
     window: {
-    type: "image",
+    type: "video",
     src: agsky,
   }
   },

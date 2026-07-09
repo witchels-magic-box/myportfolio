@@ -9,14 +9,204 @@
 
 
 @layer base {
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  background:
+    radial-gradient(circle at top left, rgba(224, 122, 63, 0.18), transparent 30rem),
+    radial-gradient(circle at bottom right, rgba(164, 91, 45, 0.12), transparent 34rem),
+    linear-gradient(135deg, #fffaf3 0%, #f8efe4 50%, #efe4d7 100%);
+  background-attachment: fixed;
+}
+
 body {
   margin: 0;
   /* display: flex; */
   min-height: 100vh;
-  background-color:#F7F7F7;
+  background: transparent;
+  color: #2f2a24;
   overflow-x: hidden;
   
 }
+
+#root {
+  min-height: 100vh;
+  background: transparent;
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100%;
+  background: transparent;
+  /* Plan B: blue pearl
+  background:
+    radial-gradient(circle at top right, rgba(92, 106, 196, 0.16), transparent 32rem),
+    radial-gradient(circle at bottom left, rgba(36, 124, 124, 0.12), transparent 34rem),
+    linear-gradient(135deg, #fbfdff 0%, #eef5fb 48%, #e7f1f4 100%);
+  */
+}
+
+.code-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.backdrop-code-block,
+.backdrop-react-logo,
+.backdrop-bracket,
+.backdrop-code-symbol,
+.backdrop-laptop,
+.backdrop-map,
+.backdrop-database,
+.backdrop-neural,
+.backdrop-chip {
+  position: absolute;
+  user-select: none;
+}
+
+.backdrop-code-block {
+  margin: 0;
+  color: rgba(39, 54, 61, 0.18);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: clamp(0.7rem, 1vw, 0.9rem);
+  line-height: 1.65;
+  letter-spacing: 0;
+  white-space: pre;
+}
+
+.backdrop-code-block {
+  width: max-content;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(174, 91, 49, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 18px 58px rgba(39, 54, 61, 0.035);
+  backdrop-filter: blur(3px);
+}
+
+.python-code {
+  top: 46%;
+  left: 6%;
+  color: rgba(174, 91, 49, 0.2);
+  transform: rotate(5deg);
+}
+
+.react-code {
+  top: 23%;
+  right: 8%;
+  color: rgba(39, 54, 61, 0.17);
+  transform: rotate(-5deg);
+}
+
+.backdrop-react-logo {
+  top: 62%;
+  right: 13%;
+  width: clamp(3rem, 5vw, 4.5rem);
+  height: auto;
+  color: rgba(174, 91, 49, 0.09);
+  transform: rotate(-14deg);
+}
+
+.backdrop-bracket {
+  color: rgba(39, 54, 61, 0.06);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: clamp(4.5rem, 9vw, 8rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.bracket-left {
+  left: 34%;
+  bottom: 6%;
+  color: rgba(244, 144, 87, 0.055);
+  transform: rotate(-11deg);
+}
+
+.bracket-right {
+  top: 7%;
+  right: 39%;
+  transform: rotate(9deg);
+}
+
+.backdrop-code-symbol {
+  top: 74%;
+  left: 48%;
+  color: rgba(39, 54, 61, 0.07);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  transform: rotate(-8deg);
+}
+
+.backdrop-laptop,
+.backdrop-map,
+.backdrop-database,
+.backdrop-neural {
+  height: auto;
+  color: rgba(39, 54, 61, 0.08);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.backdrop-laptop {
+  top: 12%;
+  left: 8%;
+  width: clamp(5.5rem, 9vw, 8rem);
+  transform: rotate(-8deg);
+}
+
+.backdrop-map {
+  top: 58%;
+  right: 26%;
+  width: clamp(4.5rem, 7vw, 6.5rem);
+  color: rgba(174, 91, 49, 0.08);
+  transform: rotate(7deg);
+}
+
+.backdrop-database {
+  top: 46%;
+  right: 4%;
+  width: clamp(3.75rem, 5vw, 4.75rem);
+  color: rgba(39, 54, 61, 0.08);
+  transform: rotate(-5deg);
+}
+
+.backdrop-neural {
+  top: 82%;
+  left: 9%;
+  width: clamp(5.5rem, 9vw, 8rem);
+  color: rgba(39, 54, 61, 0.08);
+  transform: rotate(8deg);
+}
+
+.backdrop-chip {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(130, 71, 37, 0.07);
+  border-radius: 999px;
+  color: rgba(39, 54, 61, 0.16);
+  background: rgba(255, 255, 255, 0.2);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  font-weight: 700;
+}
+
+.chip-api {
+  top: 83%;
+  right: 31%;
+  transform: rotate(9deg);
+}
+
 img, video {
   max-width: none;
 }
@@ -118,17 +308,277 @@ li::before {
   height:180px;
 }
 
+.project-slider {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 42rem) 2.75rem;
+  align-items: center;
+  gap: 1rem;
+  width: min(52rem, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.project-slider-arrow {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid rgba(130, 71, 37, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.38);
+  color: #b65f32;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.project-slider-arrow:hover {
+  border-color: rgba(182, 95, 50, 0.3);
+  background: rgba(182, 95, 50, 0.09);
+  transform: translateY(-1px);
+}
+
+.project-slide {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: visible;
+  border: 1px solid rgba(130, 71, 37, 0.13);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: 0 18px 48px rgba(39, 54, 61, 0.07);
+  backdrop-filter: blur(12px);
+}
+
+.project-slide-next {
+  animation: projectSlideInFromRight 360ms ease both;
+}
+
+.project-slide-previous {
+  animation: projectSlideInFromLeft 360ms ease both;
+}
+
+.project-slide-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1rem;
+}
+
+.project-media-shell {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: auto;
+  overflow: hidden;
+  border: 1px solid rgba(130, 71, 37, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.project-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-media-text {
+  display: flex;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: #2f2a24;
+  text-align: center;
+}
+
+.project-slide .jobtitle {
+  min-height: 2.8rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.35;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.project-detail-panel {
+  border-top: 1px solid rgba(130, 71, 37, 0.08);
+  padding: 0 1rem 1rem;
+}
+
+.project-description {
+  flex: 1;
+  color: #2f2a24;
+  font-size: 0.86rem;
+  line-height: 1.58;
+  margin-top: 0.95rem;
+  text-align: left;
+}
+
+.project-description li {
+  margin-bottom: 0.85rem;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.project-learn-more {
+  align-self: center;
+  border: 1px solid rgba(182, 95, 50, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.34);
+  color: #b65f32;
+  cursor: pointer;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.7rem;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.project-learn-more:hover {
+  border-color: rgba(182, 95, 50, 0.46);
+  background: rgba(182, 95, 50, 0.1);
+  color: #7d4025;
+}
+
+.project-slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+  margin: 1.1rem auto 5rem;
+}
+
+.project-slider-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(130, 71, 37, 0.24);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 160ms ease, transform 160ms ease, width 160ms ease;
+}
+
+.project-slider-dot-active {
+  width: 1.6rem;
+  background: rgba(182, 95, 50, 0.7);
+}
+
+@keyframes projectSlideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(2.2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes projectSlideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-2.2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 
 .navbar{
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: #F7F7F7;
+  background-color: rgba(255, 250, 242, 0.48);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(130, 71, 37, 0.05);
 }
 .title{
   font-size: 25px;
-  color: #f49057;
+  color: #b65f32;
+}
+
+@media (max-width: 640px) {
+  .backdrop-code-block,
+  .backdrop-react-logo,
+  .backdrop-code-symbol,
+  .backdrop-laptop,
+  .backdrop-map,
+  .backdrop-database,
+  .backdrop-neural,
+  .backdrop-chip {
+    opacity: 0.5;
+  }
+
+  .react-code,
+  .backdrop-map,
+  .backdrop-database,
+  .backdrop-neural,
+  .chip-api {
+    display: none;
+  }
+
+  .bracket-left {
+    left: 4%;
+  }
+
+  .bracket-right {
+    right: 4%;
+  }
+
+  .python-code {
+    top: 56%;
+    left: 25%;
+  }
+
+  .backdrop-react-logo {
+    top: 34%;
+    right: 1.25rem;
+  }
+
+  .backdrop-code-symbol {
+    top: 76%;
+    left: 12%;
+  }
+
+  .backdrop-laptop {
+    top: 14%;
+    left: 1rem;
+  }
+
+  .project-slider {
+    grid-template-columns: 2.5rem minmax(0, 1fr) 2.5rem;
+    gap: 0.45rem;
+    width: min(100% - 1rem, 30rem);
+  }
+
+  .project-slider-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.65rem;
+  }
+
+  .project-slide {
+    min-height: auto;
+  }
+
+  .project-media-shell {
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-slide-main {
+    padding: 0.8rem;
+  }
+
+  .project-description {
+    font-size: 0.86rem;
+    line-height: 1.6;
+  }
 }
 }
 
@@ -202,4 +652,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
-

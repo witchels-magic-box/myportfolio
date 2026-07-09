@@ -13,6 +13,7 @@ function Navbar() {
       <a href="#home" ><button className='navbtn'>  Home </button></a>
       <a href="#about" ><button className='navbtn'>  About </button></a>
       <a href="#experience" ><button className='navbtn'>  Experience </button></a>
+      
       <a href="#projects" ><button className='navbtn'>  Projects </button></a>
         
 
